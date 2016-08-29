@@ -9,14 +9,6 @@
 ////var constructorOverload = new /*constructorOverloadReference1*/ConstructorOverload();
 ////var constructorOverload = new /*constructorOverloadReference2*/ConstructorOverload("foo");
 
-goTo.marker('constructorOverloadReference1');
-goTo.definition();
-verify.caretAtMarker('constructorOverload1');
-
-goTo.marker('constructorOverloadReference2');
-goTo.definition();
-verify.caretAtMarker('constructorOverload2');
-
-goTo.marker('constructorOverload1');
-goTo.definition();
-verify.caretAtMarker('constructorDefinition');
+verify.goToDefinition("constructorOverloadReference1", "constructorOverload1");
+verify.goToDefinition("constructorOverloadReference2", "constructorOverload2");
+verify.goToDefinition("constructorOverload1", "constructorDefinition");

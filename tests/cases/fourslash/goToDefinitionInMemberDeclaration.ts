@@ -19,35 +19,7 @@
 ////    }
 ////}
 
-
-goTo.marker("interfaceReference");
-goTo.definition();
-verify.caretAtMarker("interfaceDefinition");
-
-goTo.marker("interfaceReferenceInList");
-goTo.definition();
-verify.caretAtMarker("interfaceDefinition");
-
-goTo.marker("interfaceReferenceInConstructor");
-goTo.definition();
-verify.caretAtMarker("interfaceDefinition");
-
-goTo.marker("classReference");
-goTo.definition();
-verify.caretAtMarker("classDefinition");
-
-goTo.marker("classReferenceInInitializer");
-goTo.definition();
-verify.caretAtMarker("classDefinition");
-
-goTo.marker("enumReference");
-goTo.definition();
-verify.caretAtMarker("enumDefinition");
-
-goTo.marker("enumReferenceInInitializer");
-goTo.definition();
-verify.caretAtMarker("enumDefinition");
-
-goTo.marker("selfReference");
-goTo.definition();
-verify.caretAtMarker("selfDefinition");
+verify.goToDefinition(["interfaceReference", "interfaceReferenceInList", "interfaceReferenceInConstructor"], "interfaceDefinition");
+verify.goToDefinition(["classReference", "classReferenceInInitializer"], "classDefinition");
+verify.goToDefinition(["enumReference", "enumReferenceInInitializer"], "enumDefinition");
+verify.goToDefinition("selfReference", "selfDefinition");

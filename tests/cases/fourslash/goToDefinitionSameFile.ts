@@ -21,8 +21,6 @@ var markerList = [
     "localModule",
 ];
 
-markerList.forEach((marker) => {
-    goTo.marker(marker + 'Reference');
-    goTo.definition();
-    verify.caretAtMarker(marker + 'Definition');
-});
+for (const marker of markerList) {
+    verify.goToDefinition(marker + "Reference", marker + "Definition");
+}

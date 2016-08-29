@@ -11,6 +11,4 @@
 ////    }
 ////}
 
-goTo.marker('interfaceReference');
-goTo.definition();
-verify.caretAtMarker('interfaceDefinition');
+verify.goToDefinition("interfaceReference", "interfaceDefinition");
